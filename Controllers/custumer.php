@@ -24,7 +24,12 @@ class Custumer{
 				echo "<span class='noti'>Salió</span>";
 				if($_SESSION['usuario']){
 					echo '<br>';
-					header('Location: ?');
+					if (empty($_GET['Tid'])) {
+						header('Location: ?');	
+					}else{
+						header('Location: ?action=cartelera&Tid='.$_GET['Tid']);
+					}
+					
 					}
 			}else{
 					echo "<span class='noti'>Verifique sus datos<br> ".$respuesta['email']."</span>";

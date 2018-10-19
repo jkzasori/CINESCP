@@ -9,6 +9,8 @@ require_once("Controllers/cartelera.php");
 require_once("Models/cartelera.php");
 require_once("Controllers/movie.php");
 require_once("Models/movie.php");
+require_once("Controllers/score.php");
+require_once("Models/score.php");
 $ver = new Enlaces();
 $ver -> template();
 
