@@ -1,7 +1,7 @@
-<div class="row header bg-primary text-center">
-	<div class="line col-12">
+<div class="row header bg-primary text-center ">
+	<div class="line col-12 Shadow">
 		<div class="title ">
-			<span class="SCP"> CINE SCP </span>
+			<span class="SCP"> <a href="/CINESCP" class="link">CINE SCP</a> </span>
 			<span>Sistema de calificación para películas que ayude a los teatros a calcular el nivel de aceptación de estas.</span>
 		</div>
 		<div class="sub-title text-right">
@@ -11,7 +11,7 @@
 </div>
 <div class="container content-box">
 	<div class="row text-center">
-		<div class="col-12 col-md-6 SignUp ">
+		<div class="col-12 col-md-6 SignUp Shadow">
 			<h2>Don't have an account?</h2>
 			  <!-- Trigger the modal with a button -->
 		  <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal" data-target="#modalSignUp">Sign Up</button>
@@ -20,7 +20,7 @@
 	            $enc -> nuevoCustumer();
 	      ?>
 		</div>
-		<div class="col-12 LogIn col-md-6 ">
+		<div class="col-12 LogIn col-md-6 Shadow">
 			<h2>Have an account?</h2>
 		  <!-- Trigger the modal with a button -->
 		  <?php
@@ -38,31 +38,7 @@
 		</div>	
 	</div>
  </div>
- <div class="container content-box text-center" style="background-color: #e5dfff; padding: 20px;"> 
- 	<!--  -->
- 	<h3 class="text-primary font-weight-bold" style="border-bottom: 1px solid white; margin-bottom: 5px; padding-bottom: 5px;">THEATER</h3>
- 		<div class="table-responsive">          
-		   <table  id="example" class="table table-striped table-bordered">
-			    <thead>
-			        <tr>
-				        <th>Theater Name</th>
-				        <th>Full address</th>
-				        
-			        </tr>
-			    </thead>
-			    <tbody>
-				    <?php 
-             			$enc = new Theater();
-             			$enc-> verTheater();
-             		?>
-				</tbody>
-			</table>
-		</div>
- 	<!--  -->
- 	<table>
- 		
- 	</table>
- </div>
+
 
 
 
@@ -145,15 +121,16 @@
 	      </div>
 	      
 	    </div>
-	  </div><!-- /Modal -->
-<!-- <div class="container">
-	<div class="bg-primary body">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</div>
-</div> -->
+	  </div>
 
+
+<div class="container content-box text-center" style="background-color: #e5dfff; padding: 20px;"> 
+ 	<!--  -->
+ 	<main class="panel " id="main">
+		<?php
+		$enlace = new Enlaces();
+		$enlace -> enlacesPanell();		    
+	?>
+	</main>
+ 	<!--  -->
+ </div>

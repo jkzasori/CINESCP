@@ -62,6 +62,14 @@ th.blueT{
 }
 .title .SCP{
 	font-size: 65px;
+	font-weight: bold;
+}
+/* unvisited link and visited link */
+.link, .link:visited {
+    color: white;
+}/* selected link and mouse over link */
+.link:hover, .link:active{
+    color: #db2369;
 }
 .sub-title{
 	font-size: 12px;
@@ -85,7 +93,13 @@ th.blueT{
 }.SignUp{
 	background-color: #db2369;
 }
-
+.text-movie{
+	color: #db2369;
+	font-weight: bold;
+}
+.Shadow{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 @media only screen and (max-width: 775px){
 	.title .SCP{
 		font-size: 45px;

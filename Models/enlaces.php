@@ -6,23 +6,30 @@ if(!isset($_SESSION))
     }
 class EnlaceModel{
 	public function enlacePanelM($enlacePanel){
-	
-
     
 		if ($enlacePanel == 'salir') {
 			$module = 'Views/'.$enlacePanel.'.php';
 		}
-			else if(isset($_SESSION['usuario'])){
-				if ($_SESSION['usuario']) {
-					$module = 'Views/Inicio.php';
-				}else {
-			$module = 'Views/Inicio.php';
+		else if(isset($_SESSION['usuario'])){
+			if ($_SESSION['usuario']) {
+				$module = 'Views/Content.php';
+			}else {
+				$module = 'Views/Content.php';
+			}	
 		}
-				
-		}
-			else {
-			$module = 'Views/Inicio.php';
+		else {
+			$module = 'Views/Content.php';
 		}
 		return $module;
 	}
+
+	public function enlacePanelMM($enlacePanel){
+		if ($enlacePanel == 'cartelera') {
+				$module = 'Views/'.$enlacePanel.'.php';
+			}else{
+				$module = 'Views/theater.php';		
+			}
+		return $module;
+	}
+
 }
