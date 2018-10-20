@@ -24,7 +24,7 @@ class EnlaceModel{
 	}
 
 	public function enlacePanelMM($enlacePanel){
-		if ($enlacePanel == 'cartelera') {
+		if ($enlacePanel == 'cartelera' || $enlacePanel == 'customer') {
 				$module = 'Views/'.$enlacePanel.'.php';
 			}else{
 				$module = 'Views/theater.php';		

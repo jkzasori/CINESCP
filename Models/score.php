@@ -40,5 +40,17 @@ class ScoreModel{
 		$Score=$resul->fetch_array(MYSQLI_BOTH);
 		return $Score;	
 	}
+	function oneScoreM($idcustomer){//trae score por customer
+		$conec = new Conexion();//
+	  	$mysqlit=$conec->conectar();
+	  	$mysqlit->set_charset('utf8');
+		$sqlt = $mysqlit->prepare("SELECT idcartelera, quantity FROM score where idcustomer=?");
+		$sqlt->bind_param("i", $idcustomer);
+		//Ahora ejecutamos la consulta
+		$sqlt -> execute();
+		//obtenemos los resultados que nos arroja
+		$resul=$sqlt->get_result();
+		return $resul;	
+	}
 }
  ?>

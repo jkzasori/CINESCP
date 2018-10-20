@@ -15,8 +15,24 @@ class Score{
 			}
 		}
 	}
-	function verScore(){
-		
+	function oneScore(){
+		if (empty($_GET['Cid'])) {	
+		}else{
+			$idcustomer=$_GET['Cid'];
+			$score = (new ScoreModel) -> oneScoreM($idcustomer);
+			while ($v= $score->fetch_array(MYSQLI_BOTH)) {
+				$cartelera = (new CarteleraModel) -> oneCarteleraM($v["idcartelera"]);
+				$movie = (new MovieModel) -> verMovie($cartelera["idmovie"]);
+				echo '
+				<tr>
+                    <td class="text-left ">
+                    	<br><span class="text-movie">Movie: </span>'.$movie["name"].'
+                    	<br><span class="text-movie">Description: </span>'.$movie["description"].'
+                    	<br><span class="text-movie">My Score: </span>'.$v["quantity"].'
+                    </td>
+                </tr> ';
+          }
+		}
 	}
 }
 ?>

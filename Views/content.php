@@ -16,8 +16,8 @@
 			  <!-- Trigger the modal with a button -->
 		  <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal" data-target="#modalSignUp">Sign Up</button>
 		   <?php
-	            $enc = new Custumer();
-	            $enc -> nuevoCustumer();
+	            $enc = new Customer();
+	            $enc -> nuevoCustomer();
 	      ?>
 		</div>
 		<div class="col-12 LogIn col-md-6 Shadow">
@@ -37,6 +37,20 @@
             ?>
 		</div>	
 	</div>
+	 <?php
+		if(isset($_SESSION['usuario'])){ 
+		    echo '<div class="row text-center">
+					<div class="col-md-4 offset-md-4 bg-dark text-light Shadow my-3 py-2 " style="height:63px;border-radius: 50px;">
+						<a href="?action=customer&Cid='.$_SESSION['usuario']['idcustomer'].'" class="btn btn-outline-light">
+							<i class="material-icons tiny">sentiment_very_satisfied</i>My Profile<i class="material-icons tiny">sentiment_very_satisfied</i>
+						</a>
+					</div>
+				</div>'; 
+		}else {
+		    echo '';
+		    }
+	?>
+	
  </div>
 
 

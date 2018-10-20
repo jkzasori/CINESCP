@@ -3,8 +3,8 @@
  * 
  */
 require_once("conection.php");
-class CustumerModel{
-	function nuevoCustumerM($firtsname, $lastname, $age, $emailC, $passwordS){
+class CustomerModel{
+	function nuevoCustomerM($firtsname, $lastname, $age, $emailC, $passwordS){
 		$conect = new Conexion();
 		$mysqli = $conect -> conectar();
 		$mysqli -> set_charset('utf8');
@@ -57,6 +57,20 @@ function ingresoM($emailC, $passwordS){
 				
 				$sqlt -> close();
 		}
-	}     
+	}
+
+	function oneCustomerM($idcustomer){
+		$conec = new Conexion();//
+	  	$mysqlit=$conec->conectar();
+	  	$mysqlit->set_charset('utf8');
+		$sqlt = $mysqlit->prepare("SELECT * FROM customer where idcustomer=?");
+		$sqlt->bind_param("i", $idcustomer);
+		//Ahora ejecutamos la consulta
+		$sqlt -> execute();
+		//obtenemos los resultados que nos arroja
+		$resul=$sqlt->get_result();
+		$Customer=$resul->fetch_array(MYSQLI_BOTH);
+		return $Customer;	
+	}
 }
 ?>
